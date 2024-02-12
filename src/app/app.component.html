@@ -1,0 +1,19 @@
+<asl-google-signin-button *ngIf="!user" size=large></asl-google-signin-button>
+<div *ngIf="user">
+  <img src="{{user.photoUrl}}">
+  <div>
+    <h4>{{user.name}}</h4>
+    <p>{{user.email}}</p>
+  </div>
+</div>
+
+<button *ngIf="!loggedIn" (click)="signInWithFB()">Login with FB</button>
+<div *ngIf="loggedIn">
+  <img src="{{user.response.picture.data.url}}">
+  <div>
+    <h4>{{user.name}}</h4>
+    <p>{{user.email}}</p>
+  </div>
+</div>
+
+
